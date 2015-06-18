@@ -1,0 +1,25 @@
+name: RALogin
+version: 1.0.0
+description: Login tokens 4 dayz
+author: Phanta
+website: https://phantamanta44.github.io
+main: io.github.phantamanta44.ralogin.RALogin
+depend: [Vault]
+commands:
+    logintoken:
+        description: RALogin root command
+        aliases: [ltoken, lt]
+        usage: "/logintokens help"
+permissions:
+    ralogin.receive:
+        description: Receive tokens on login
+        default: op
+    ralogin.trade:
+        description: Trade tokens for rewards
+        default: op
+    ralogin.view:
+        description: View token balances of other players
+        default: op
+    ralogin.modify:
+        description: Modify token balances of other players
+        default: op

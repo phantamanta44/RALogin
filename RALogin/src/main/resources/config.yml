@@ -1,0 +1,13 @@
+config:
+    tokensperday: 1
+    currency: "dollars"
+rewards:
+    prize:
+        price: 15
+        money: 1000
+        items:
+        - 5000;4;0;Metal Bar Without a Cool Name
+        - 265;16;0;Iron Ingot
+        - 1943;1;0;Basic Energy Cube
+        commands:
+        - heal %PLAYER%;Full heal
