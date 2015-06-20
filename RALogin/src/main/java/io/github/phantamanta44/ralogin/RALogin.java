@@ -114,11 +114,13 @@ public class RALogin extends JavaPlugin {
 									if (entry.getTokenCount() >= pkg.price) {
 										entry.decrementCount(pkg.price);
 										sender.sendMessage(prefix + ChatColor.GRAY + "Received trade package " + ChatColor.BLUE + pkg.name + ChatColor.GRAY + ".");
-										EconomyResponse res = econ.depositPlayer((Player)sender, pkg.money);
-										if (!res.transactionSuccess())
-											sender.sendMessage("Something went wrong while transferring money! " + res.errorMessage);
-										else
-											sender.sendMessage(ChatColor.GREEN + "Received " + (int)res.amount + " " + this.getConfig().getString("config.currency") + ". New account balance: " + (int)res.balance);
+										if (pkg.money > 0) {
+											EconomyResponse res = econ.depositPlayer((Player)sender, pkg.money);
+											if (!res.transactionSuccess())
+												sender.sendMessage("Something went wrong while transferring money! " + res.errorMessage);
+											else
+												sender.sendMessage(ChatColor.GREEN + "Received " + (int)res.amount + " " + this.getConfig().getString("config.currency") + ". New account balance: " + (int)res.balance);
+										}
 										for (String com : pkg.cmds.keySet()) {
 											String rwdCmd = com.replaceAll("%PLAYER%", ((Player)sender).getName());
 											Bukkit.getServer().getLogger().info("[RALogin] Running command: /" + rwdCmd);
