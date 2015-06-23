@@ -9,7 +9,7 @@ commands:
     logintoken:
         description: RALogin root command
         aliases: [ltoken, lt]
-        usage: "/logintokens help"
+        usage: "/logintoken help"
 permissions:
     ralogin.receive:
         description: Receive tokens on login
@@ -22,4 +22,7 @@ permissions:
         default: op
     ralogin.modify:
         description: Modify token balances of other players
+        default: op
+    ralogin.admin:
+        description: Reload plugin
         default: op
