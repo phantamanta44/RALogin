@@ -22,8 +22,9 @@ import org.bukkit.plugin.java.JavaPlugin;
 
 public class RALogin extends JavaPlugin {
 	
-	public static final String prefix = ChatColor.AQUA + "[RisingAllianceLogin] " + ChatColor.RESET;
-	public static final String microfix = ChatColor.AQUA + "» " + ChatColor.RESET;
+	public static final String prefixSuffix = " " + ChatColor.RESET;
+	public static String prefix = ChatColor.AQUA + "[RALogin] " + ChatColor.RESET;
+	public static String microfix = ChatColor.AQUA + "» " + ChatColor.RESET;
 	
 	private DatabaseHandler db;
 	private TradeHandler th;
@@ -437,6 +438,12 @@ public class RALogin extends JavaPlugin {
 			this.saveDefaultConfig();
 		super.reloadConfig();
 		th = new TradeHandler(this.getConfig().getConfigurationSection("rewards"));
+		prefix = formatColours(this.getConfig().getString("config.prefix").trim()) + prefixSuffix;
+		microfix = formatColours(this.getConfig().getString("config.miniprefix").trim()) + prefixSuffix;
+	}
+	
+	public static String formatColours(String s) {
+		return s.replaceAll("&([0-9a-fA-Fk-oK-OrR])", ChatColor.COLOR_CHAR + "$1");
 	}
 	
 }

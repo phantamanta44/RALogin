@@ -1,13 +1,15 @@
 config:
+    prefix: "&b[RALogin]"
+    miniprefix: "&b»"
     tokensperday: 1
     currency: "dollars"
 rewards:
     prize:
         price: 15
         money: 1000
-        items:
-        - 5000;4;0;Metal Bar Without a Cool Name
+        items: // - ItemID;Amount;Damage;DisplayName
+        - 256;4;0;Slightly Shiny Shovel
         - 265;16;0;Iron Ingot
-        - 1943;1;0;Basic Energy Cube
-        commands:
+        - 152;1;0;Basic Energy Cube
+        commands: // - Command;DisplayName
         - heal %PLAYER%;Full heal
