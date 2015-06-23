@@ -7,9 +7,9 @@ rewards:
     prize:
         price: 15
         money: 1000
-        items: // - ItemID;Amount;Damage;DisplayName
+        items:
         - 256;4;0;Slightly Shiny Shovel
         - 265;16;0;Iron Ingot
         - 152;1;0;Basic Energy Cube
-        commands: // - Command;DisplayName
+        commands:
         - heal %PLAYER%;Full heal
